@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Курсова робота", "Курсова робота\Курсова робота.vcxproj", "{3B409459-A344-4078-BD04-91DFD691FE81}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B409459-A344-4078-BD04-91DFD691FE81}.Debug|x64.ActiveCfg = Debug|x64
+		{3B409459-A344-4078-BD04-91DFD691FE81}.Debug|x64.Build.0 = Debug|x64
+		{3B409459-A344-4078-BD04-91DFD691FE81}.Debug|x86.ActiveCfg = Debug|Win32
+		{3B409459-A344-4078-BD04-91DFD691FE81}.Debug|x86.Build.0 = Debug|Win32
+		{3B409459-A344-4078-BD04-91DFD691FE81}.Release|x64.ActiveCfg = Release|x64
+		{3B409459-A344-4078-BD04-91DFD691FE81}.Release|x64.Build.0 = Release|x64
+		{3B409459-A344-4078-BD04-91DFD691FE81}.Release|x86.ActiveCfg = Release|Win32
+		{3B409459-A344-4078-BD04-91DFD691FE81}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AFF0D9BD-E93E-496E-9821-9237D0C866F0}
+	EndGlobalSection
+EndGlobal
