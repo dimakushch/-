@@ -233,20 +233,20 @@ void saveDataToFile(const string& filename) {
     if (file.is_open()) {
         file << spivs.size() << endl;
         for (const auto& spiv : spivs) {
-            file << spiv.pib << endl << spiv.posad << endl << spiv.phone << endl << spiv.email << endl;
+            file<< "Співробітники: \n"<<"ПІБ: " << spiv.pib << endl << "Посада: " << spiv.posad << endl << "Телефон: " << spiv.phone << endl << "Email: " << spiv.email << endl;
         }
 
         file << avtos.size() << endl;
         for (const auto& avto : avtos) {
-            file << avto.nazva << endl << avto.rik << endl << avto.model << endl << avto.vart << endl << avto.cina << endl;
+            file <<"Авто: \n"<< "Марка авто: " << avto.nazva << endl << "Рік авто: " << avto.rik << endl << "Модель авто: " << avto.model << endl << "Вартість авто: " << avto.vart << endl << "Потенційна ціна: " << avto.cina << endl;
         }
 
         file << prods.size() << endl;
         for (const auto& prod : prods) {
-            file << prod.spiv.pib << endl << prod.spiv.posad << endl << prod.spiv.phone << endl << prod.spiv.email << endl
-                << prod.avto.nazva << endl << prod.avto.rik << endl << prod.avto.model << endl << prod.avto.vart << endl << prod.avto.cina << endl
-                << prod.real << endl << prod.date.day << "-" << prod.date.month << "-" << prod.date.year << endl
-                << printTotalProfit << endl << printTopSpiv << endl << printMostPopularAvto << endl << printProdBySpiv << endl << printProdByPeriod << endl << printProdByDate << endl;
+            file <<"Продажі: \n"<<"ПІБ: "<< prod.spiv.pib << endl <<"Посада: "<< prod.spiv.posad << endl <<"Телефон: "<< prod.spiv.phone << endl <<"Email: "<< prod.spiv.email << endl
+                <<"Марка авто: "<< prod.avto.nazva << endl <<"Рік авто: "<< prod.avto.rik << endl <<"Модель авто: "<< prod.avto.model << endl <<"Вартість авто: "<< prod.avto.vart << endl <<"Потенційна ціна: "<< prod.avto.cina << endl
+                <<"Реальна ціна: "<< prod.real << endl <<"Дата: "<< prod.date.day << "-" << prod.date.month << "-" << prod.date.year << endl
+                <<"Загальний прибуток за періодами: "<< printTotalProfit << endl <<"Найкращий працівник за періодам: "<< printTopSpiv << endl <<"Найкраще авто за періодами: "<< printMostPopularAvto << endl <<"Продажі за співробітниками: "<< printProdBySpiv << endl <<"Продажі за періодами: "<< printProdByPeriod << endl <<"Продажі за датою: "<< printProdByDate << endl;
         }
         file.close();
     }
@@ -317,6 +317,7 @@ int main()
 
     int choice;
     do {
+        cout << "\033[2J\033[1;1H";
         cout << "\nОблік продажу автомобілів в автосалоні\n";
         cout << "1. Додати співробітника\n";
         cout << "2. Видалити співробітника\n";
@@ -329,8 +330,8 @@ int main()
         cout << "9. Показаті всі продажі\n";
         cout << "10. Показати продажі за датою\n";
         cout << "11. Показати продажі за періодами\n";
-        cout << "12. Show Sales by Employee\n";
-        cout << "13. Показати продажі за співробітниками\n";
+        cout << "12. Показати продажі за співробітниками\n";
+        cout << "13. Показати найкраще авто за періодами\n";
         cout << "14. Показати найкращих працівників за періодами\n";
         cout << "15. Показати загальний прибуток за періодами\n";
         cout << "16. Збереження даних у файл\n";
@@ -339,10 +340,10 @@ int main()
         cout << "Введіть свій вибір: ";
         cin >> choice;
         cin.ignore();
-        cout << endl;
 
         switch (choice) {
         case 1: {
+            cout << "\033[2J\033[1;1H";
             Spiv spiv;
             cout << "Введіть ПІБ співробітника: ";
             getline(cin, spiv.pib);
@@ -356,6 +357,7 @@ int main()
             break;
         }
         case 2: {
+            cout << "\033[2J\033[1;1H";
             string name;
             cout << "Введіть ім'я співробітника, якого потрібно видалити: ";
             getline(cin, name);
@@ -363,6 +365,7 @@ int main()
             break;
         }
         case 3: {
+            cout << "\033[2J\033[1;1H";
             Avto avto;
             cout << "Введіть виробника автомобіля: ";
             getline(cin, avto.nazva);
@@ -380,6 +383,7 @@ int main()
             break;
         }
         case 4: {
+            cout << "\033[2J\033[1;1H";
             string model;
             cout << "Введіть модель автомобіля для видалення: ";
             getline(cin, model);
@@ -387,6 +391,7 @@ int main()
             break;
         }
         case 5: {
+            cout << "\033[2J\033[1;1H";
             Prod prod;
             cout << "Введіть ПІБ співробітника: ";
             getline(cin, prod.spiv.pib);
@@ -405,6 +410,7 @@ int main()
             break;
         }
         case 6: {
+            cout << "\033[2J\033[1;1H";
             int index;
             cout << "Введіть індекс продажу, щоб видалити: ";
             cin >> index;
@@ -413,20 +419,25 @@ int main()
             break;
         }
         case 7:
+            cout << "\033[2J\033[1;1H";
             printSpiv();
             break;
         case 8:
+            cout << "\033[2J\033[1;1H";
             printAvto();
             break;
         case 9:
+            cout << "\033[2J\033[1;1H";
             printProd();
             break;
         case 10: {
+            cout << "\033[2J\033[1;1H";
             Date date = inputDate();
             printProdByDate(date);
             break;
         }
         case 11: {
+            cout << "\033[2J\033[1;1H";
             Date startDate, endDate;
             cout << "Введіть дату початку (DD MM YYYY): ";
             cin >> startDate.day >> startDate.month >> startDate.year;
@@ -436,6 +447,7 @@ int main()
             break;
         }
         case 12: {
+            cout << "\033[2J\033[1;1H";
             string spivName;
             cout << "Введіть ім'я співробітника, щоб переглянути продажі: ";
             getline(cin, spivName);
@@ -443,6 +455,7 @@ int main()
             break;
         }
         case 13: {
+            cout << "\033[2J\033[1;1H";
             Date startDate, endDate;
             cout << "Введіть дату початку (DD MM YYYY): ";
             cin >> startDate.day >> startDate.month >> startDate.year;
@@ -452,6 +465,7 @@ int main()
             break;
         }
         case 14: {
+            cout << "\033[2J\033[1;1H";
             Date startDate, endDate;
             cout << "Введіть дату початку (DD MM YYYY): ";
             cin >> startDate.day >> startDate.month >> startDate.year;
@@ -461,6 +475,7 @@ int main()
             break;
         }
         case 15: {
+            cout << "\033[2J\033[1;1H";
             Date startDate, endDate;
             cout << "Введіть дату початку (DD MM YYYY): ";
             cin >> startDate.day >> startDate.month >> startDate.year;
@@ -470,6 +485,7 @@ int main()
             break;
         }
         case 16: {
+            cout << "\033[2J\033[1;1H";
             string filename;
             cout << "Введіть ім'я файлу для збереження даних: ";
             getline(cin, filename);
@@ -477,6 +493,7 @@ int main()
             break;
         }
         case 17: {
+            cout << "\033[2J\033[1;1H";
             string filename;
             cout << "Введіть ім'я файлу для завантаження даних: ";
             getline(cin, filename);
@@ -484,6 +501,7 @@ int main()
             break;
         }
         case 18:
+            cout << "\033[2J\033[1;1H";
             cout << "До побачення\n";
             break;
         default:
